@@ -5,8 +5,11 @@
 
 
 /*
-________________	SGI Sabateur Script (AKA: The Israeli Kiss)	_______
+_____________SGI Sabateur Script (AKA: The Israeli Kiss)_______________
 
+All original scripts by me can be found here:
+
+https://github.com/revdogma/Arma-3-Scripts-by-RevDogma
 
 //________________	Place this code in the init.sqf	___________________
 
