@@ -20,11 +20,11 @@ ________________	SGI Sabateur Script (AKA: The Israeli Kiss)	_______
 
 //------------------------Settings------------------------------------------
 
-SGI_sab_time = 5;                                                                                                       //Sets how long the hold interaction last
+SGI_sab_time = 5;                                                                                                                                //Sets how long the hold interaction last
 
-SGI_sab_class = ["Land_Laptop_device_F", "Target_0", "Land_WoodPile_F", "Target_1", "Target_2", "DeconShower_01_F"];    //Add classes or vehicleVariable names    
+SGI_sab_class = ["Land_Laptop_device_F", "Target_0", "Target_1", "Target_2", "Land_MobilePhone_old_F", "Land_WoodenCrate_01_F"];                 //Add classes or vehicleVariable names    
 
-SGI_sab_total = 3;                                                                                                      //Sets how many objects a player can arm at once
+SGI_sab_total = 3;                                                                                                                               //Sets how many objects a player can arm at once
 
 //------------------------ End Settings-------------------------------------
 
@@ -34,6 +34,8 @@ SGI_sab_objs = [];
 SGI_sab_acts = [];
 
 SGI_sab_armed = [];
+
+SGI_sab_count = 0;
 
 SGI_sab_ObjPick = "";
 
@@ -55,7 +57,7 @@ SGI_sab_items = {
                     "_caller distance _target < 3",									        // Condition for the action to progress
                     {},																        // Code executed when action starts
                     {},																        // Code executed on every progress tick
-                    {SGI_sab_armed = SGI_sab_armed + [_target]; hint "Explosive planted!"},	// Code executed on completion
+                    {SGI_sab_armed = SGI_sab_armed + [_target]; hint "Explosive planted!";},	// Code executed on completion
                     {},																        // Code executed on interrupted
                     [],																        // Arguments passed to the scripts as _this select 3
                     SGI_sab_time,															// Action duration in seconds
@@ -205,7 +207,7 @@ SGI_sab_CallScreen = {
 
         if (SGI_sab_ObjPick != '') then {
 
-            _obj = missionNamespace getVariable [SGI_sab_ObjPick, ''];
+            _obj = SGI_sab_armed select SGI_sab_index;
 
             _pos = getPos _obj;
 
@@ -213,11 +215,15 @@ SGI_sab_CallScreen = {
 
             _explosive setDamage 1;
 
+            _obj setDamage 1;
+
             lbDelete [1500, SGI_sab_index];
 
             _ind= SGI_sab_armed findIf {_x isEqualTo _obj};
 
             SGI_sab_armed deleteAt _ind;
+
+            SGI_sab_ObjPick = '';
         };
     "];
 
