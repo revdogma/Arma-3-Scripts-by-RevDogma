@@ -25,7 +25,7 @@ https://github.com/revdogma/Arma-3-Scripts-by-RevDogma
 #include "SGI_saboteur\Control.hpp"
 
 
-//________________	Place this code in the Description.ext	___________
+//___________spawn this code locally on the client to use it___________
 
 Use this locally on the client you want to give the ability too:
 
