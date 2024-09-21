@@ -25,11 +25,14 @@ https://github.com/revdogma/Arma-3-Scripts-by-RevDogma
 #include "SGI_saboteur\Control.hpp"
 
 
-//________________	Place this code in the Description.ext	___________
+//___________Spawn this code locally on the client to use it___________
+
 
 Use this locally on the client you want to give the ability too:
 
 [] spawn SGI_sab_init;
+
+
 
 */
 
@@ -39,7 +42,7 @@ Use this locally on the client you want to give the ability too:
 
 SGI_sab_time = 5;                                                                                                                                //Sets how long the hold interaction last
 
-SGI_sab_class = ["Land_Laptop_device_F", "Target_0", "Target_1", "Target_2", "Land_MobilePhone_old_F", "Land_WoodenCrate_01_F"];                 //Add classes or vehicleVariable names    
+SGI_sab_class = ["Land_Laptop_device_F", "Target_0", "Target_1", "Target_2", "Land_MobilePhone_old_F", "Land_WoodenCrate_01_F"];                 //Add classes or variable names    
 
 SGI_sab_total = 3;                                                                                                                               //Sets how many objects a player can arm at once
 
@@ -146,7 +149,9 @@ SGI_sab_init = {
     _end = format ["
     
         {
-            _ind = SGI_sab_objs findIf {_x == _x};
+            _var = _x;
+
+            _ind = SGI_sab_objs findIf {_x == _var};
 
             _obj = SGI_sab_objs select _ind;
 
