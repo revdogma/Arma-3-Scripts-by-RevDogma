@@ -39,7 +39,7 @@ Use this locally on the client you want to give the ability too:
 
 SGI_sab_time = 5;                                                                                                                                //Sets how long the hold interaction last
 
-SGI_sab_class = ["Land_Laptop_device_F", "Target_0", "Target_1", "Target_2", "Land_MobilePhone_old_F", "Land_WoodenCrate_01_F"];                 //Add classes or vehicleVariable names    
+SGI_sab_class = ["Land_Laptop_device_F", "Target_0", "Target_1", "Target_2", "Land_MobilePhone_old_F", "Land_WoodenCrate_01_F"];                 //Add classes or variable names    
 
 SGI_sab_total = 3;                                                                                                                               //Sets how many objects a player can arm at once
 
