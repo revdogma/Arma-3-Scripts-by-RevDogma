@@ -1685,3 +1685,21 @@ class SGICall {
 		};
 	};
 };
+
+class SGIBoom { 
+
+	idd = 1111115; 
+
+	class controls { 
+
+		class CallPic: RscPicture
+		{
+			idc = 1200;
+			text = "SGI_saboteur\SmartPhone2.paa";
+			x = -0.0259375 * safezoneW + safezoneX;
+			y = 0.401 * safezoneH + safezoneY;
+			w = 0.268125 * safezoneW;
+			h = 0.473 * safezoneH;
+		};
+	};
+};

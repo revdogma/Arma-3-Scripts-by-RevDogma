@@ -231,9 +231,13 @@ SGI_sab_CallScreen = {
 
             _obj = SGI_sab_armed select SGI_sab_index;
 
-            _pos = getPos _obj;
+            _pos = getPosATL _obj;
 
-            _explosive = createMine ['APERSMineDispenser_Mine_F', _pos, [], 0];
+            _explosive = createVehicle ['mini_Grenade', _pos, [], 0];
+
+            hideObject _explosive;
+
+            _explosive attachTo [_obj];
 
             _explosive setDamage 1;
 
@@ -246,6 +250,8 @@ SGI_sab_CallScreen = {
             SGI_sab_armed deleteAt _ind;
 
             SGI_sab_ObjPick = '';
+
+             [] spawn SGI_sab_BoomScreen;
         };
     "];
 
@@ -259,4 +265,15 @@ SGI_sab_CallScreen = {
 
         SGI_sab_index = _lbCurSel;
     "];
+};
+
+SGI_sab_BoomScreen = {
+
+    closeDialog 2;
+
+    _display = createDialog "SGIBoom";
+
+    sleep 6;
+
+    [] spawn SGI_sab_CallScreen;
 };
