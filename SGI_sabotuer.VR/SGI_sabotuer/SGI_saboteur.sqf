@@ -146,7 +146,9 @@ SGI_sab_init = {
     _end = format ["
     
         {
-            _ind = SGI_sab_objs findIf {_x == _x};
+            _var = _x;
+
+            _ind = SGI_sab_objs findIf {_x == _var};
 
             _obj = SGI_sab_objs select _ind;
 
